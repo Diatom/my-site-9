@@ -1,4 +1,4 @@
-import { cheese } from './cheese.js';
+import { listofcheese } from './cheese.js';
 
 // class Templ {
 //   constructor(che) {
@@ -8,17 +8,20 @@ import { cheese } from './cheese.js';
 //     document.getElementById(`bodymain`).appendChild(this.che);
 //   }
 // }
-console.log(cheese);
 
-
-const obj = document.createElement(`div`);
-for (const property in cheese) {
-  const item = document.createElement(`p`);
-  item.innerHTML = `${property}: ${cheese[property]}`;
-  obj.innerHTML = item;
+function createList() {
+  for (const property in listofcheese) {
+      const obj = document.createElement(`div`);
+      for (const property in listofcheese) {
+       const item1 = document.createElement(`p`);
+        item1.innerHTML = `${property}: ${listofcheese[property]}`;
+        obj.appendChild(item1);
+      }
+      console.log(obj);
+      return obj;
+  }
 }
-
-document.getElementById(`bodymain`).appendChild(obj);
+document.getElementById(`bodymain`).appendChild(createList());
 
 
 // const templ = new Templ(cheese);
