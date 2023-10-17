@@ -9,3 +9,11 @@ body {
   align-items: center;
   font-family: "Ubuntu Mono", monospace;
 }
+
+div {
+  color: rgb(17, 243, 36);
+}
+
+p {
+  color: white;
+}

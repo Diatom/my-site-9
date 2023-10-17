@@ -2,16 +2,16 @@ import { listofcheese } from './cheese.js';
 
 for (const property in listofcheese) {
   if (listofcheese.hasOwnProperty(property)) {
-  const obj = document.createElement(`div`);
-  obj.innerHTML = JSON.stringify(property);
+    const obj = document.createElement(`div`);
+    obj.innerHTML = JSON.stringify(property);
 
-  for (const prop in listofcheese[property]) {
-    if (listofcheese[property].hasOwnProperty(prop)) {
-      const item = document.createElement(`p`);
-      item.innerHTML = prop + ": " + listofcheese[property][prop];
-      obj.appendChild(item);
+    for (const prop in listofcheese[property]) {
+      if (listofcheese[property].hasOwnProperty(prop)) {
+        const item = document.createElement(`p`);
+        item.innerHTML = prop + ": " + listofcheese[property][prop];
+        obj.appendChild(item);
+      }
     }
-  }
   
   document.body.appendChild(obj);
   }
