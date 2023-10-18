@@ -1,23 +1,23 @@
-// function listofCheese(name, age, milk, since, type, mold, taste, description) {
-//     this.name = name,
-//     this.age = age,
-//     this.milk = milk,
-//     this.since = since,
-//     this.type = type,
-//     this.mold = mold,
-//     this.taste = taste,
-//     this.description = description
-// }
+function listofCheese(name, age, milk, since, type, mold, taste, description) {
+    this.name = name,
+    this.age = age,
+    this.milk = milk,
+    this.since = since,
+    this.type = type,
+    this.mold = mold,
+    this.taste = taste,
+    this.description = description
+}
 
-// let cheese = ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'];
+let cheese = ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'];
 
 
-// const cheesePar = (che) {
-//     che.forEach((par) => {
-//         return par;
-//     })
-//     return che;
-//             }
+const cheesePar = (che) => {
+    che.forEach((par) => {
+        return par;
+    })
+    return che;
+}
             
 
 export const listofcheese = {
