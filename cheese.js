@@ -1,37 +1,38 @@
-function listofCheese(name, age, milk, since, type, mold, taste, description) {
-    this.name = name,
-    this.age = age,
-    this.milk = milk,
-    this.since = since,
-    this.type = type,
-    this.mold = mold,
-    this.taste = taste,
-    this.description = description
-}
+// function listofCheese(name, age, milk, since, type, mold, taste, description) {
+//     this.name = name,
+//     this.age = age,
+//     this.milk = milk,
+//     this.since = since,
+//     this.type = type,
+//     this.mold = mold,
+//     this.taste = taste,
+//     this.description = description
+// }
 
-let cheese = ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'];
+// let cheese = ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'];
+// let list = cheese.forEach((par) => par += `${par});
 
 
-const cheesePar = (che) => {
-    che.forEach((par) => {
-        return par;
-    })
-    return che;
-}
+// const cheesePar = (che) => {
+//     che.forEach((par) => {
+//         return par;
+//     })
+//     return che;
+// }
    
-function listofCheese() {
-    const cheese = ['name', 'age', 'milk', 'since', 'type', 'mold', 'taste', 'description'];
-    let obj = {};
+// function listofCheese() {
+//     const cheese = ['name', 'age', 'milk', 'since', 'type', 'mold', 'taste', 'description'];
+//     let obj = {};
   
-    for (let i = 0; i < cheese.length; i++) {
-      obj[cheese[i]] = arguments[i];
-    }
+//     for (let i = 0; i < cheese.length; i++) {
+//       obj[cheese[i]] = arguments[i];
+//     }
   
-    return obj;
-  }
+//     return obj;
+//   }
   
-  let result = listofCheese('Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese');
-  console.log(result);
+//   let result = listofCheese('Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese');
+//   console.log(result);
 
 export const listofcheese = {
     cheese: {
