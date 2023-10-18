@@ -18,7 +18,20 @@ const cheesePar = (che) => {
     })
     return che;
 }
-            
+   
+function listofCheese() {
+    const cheese = ['name', 'age', 'milk', 'since', 'type', 'mold', 'taste', 'description'];
+    let obj = {};
+  
+    for (let i = 0; i < cheese.length; i++) {
+      obj[cheese[i]] = arguments[i];
+    }
+  
+    return obj;
+  }
+  
+  let result = listofCheese('Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese');
+  console.log(result);
 
 export const listofcheese = {
     cheese: {
