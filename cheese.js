@@ -1,3 +1,52 @@
+const array = ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'];
+
+class List {
+    constructor(arr) {
+        this.arr = arr;
+        this.obj = this.buildCheese();
+    }
+    get cheese() {
+        return this.obj;
+    }
+    buildCheese() {
+        const keys = ['name', 'age', 'milk', 'since', 'type', 'mold', 'taste', 'description'];
+        const obj = {};
+        for (const prop in keys) {
+            obj[keys[prop]] = this.arr[prop];
+        }
+        return obj;
+    }
+}
+let che = new List(array);
+export const listofcheese = che.cheese;
+
+
+
+
+// export const listofcheese = {
+//     cheese: {
+//         name: 'Cheddar',
+//         age: '3-24 months',
+//         milk: 'Cow',
+//         since: '12th century AD',
+//         type: 'Semi-hard, hard',
+//         mold: 'No',
+//         taste: 'Round, spicy',
+//         description: 'Most popular semi-hard cheese'
+//     },
+//     cheese1: {
+//         name: 'Parmezan',
+//         age: '12-36 months',
+//         milk: 'Cow',
+//         since: '17th century AD',
+//         type: 'Hard',
+//         mold: 'No',
+//         taste: 'Spicy',
+//         description: 'Most popular hard cheese'
+//     }
+// }
+
+
 // function listofCheese(name, age, milk, since, type, mold, taste, description) {
 //     this.name = name,
 //     this.age = age,
@@ -34,25 +83,31 @@
 //   let result = listofCheese('Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese');
 //   console.log(result);
 
-export const listofcheese = {
-    cheese: {
-        name: 'Cheddar',
-        age: '3-24 months',
-        milk: 'Cow',
-        since: '12th century AD',
-        type: 'Semi-hard, hard',
-        mold: 'No',
-        taste: 'Round, spicy',
-        description: 'Most popular semi-hard cheese'
-    },
-    cheese1: {
-        name: 'Parmezan',
-        age: '12-36 months',
-        milk: 'Cow',
-        since: '17th century AD',
-        type: 'Hard',
-        mold: 'No',
-        taste: 'Spicy',
-        description: 'Most popular hard cheese'
-    }
-}
+
+// const keys = ['name', 'age', 'milk', 'since', 'type', 'mold', 'taste', 'description'];
+// const obj = {};
+
+// for (const prop in keys) {
+//     obj[keys[prop]] = array[prop];
+// };
+// console.log(obj);
+
+// class List {
+//     constructor(arr) {
+//         this.arr = arr;
+//     }
+//     get cheese() {
+//         return this.buildCheese();
+//     }
+//     buildCheese() {
+//         const keys = ['name', 'age', 'milk', 'since', 'type', 'mold', 'taste', 'description'];
+//         const obj = {};
+//         for (const prop in keys) {
+//             obj[keys[prop]] = this.arr[prop];
+//         }
+//         return obj;
+//     }    
+// }
+// let cheddar = new List(array);
+// console.log(cheddar.cheese);
+// cheddar.cheese;
