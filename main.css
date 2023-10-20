@@ -11,9 +11,11 @@ body {
 }
 
 div {
-  color: rgb(17, 243, 36);
+  background-color: rgba(155, 131, 131, 0.089);
+  padding: 20px;
+  border-radius: 5%;
 }
 
 p {
-  color: white;
+  color: rgb(209, 187, 187);
 }
