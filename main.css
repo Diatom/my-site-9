@@ -1,21 +1,17 @@
 body {
   background-color: black;
   color: white;
-  padding: 0 24px;
   margin: 0;
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: left;
   align-items: center;
   font-family: "Ubuntu Mono", monospace;
 }
 
 div {
   background-color: rgba(155, 131, 131, 0.089);
-  padding: 20px;
+  padding: 1em;
+  margin: 1em;
   border-radius: 5%;
-}
-
-p {
-  color: rgb(209, 187, 187);
 }

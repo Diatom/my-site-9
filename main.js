@@ -1,4 +1,7 @@
-import { listofcheese } from './cheese.js';
+// import { listofcheese } from './cheese.js';
+import { List, fetchData, array } from './cheese.js';
+// import array from './data.json';
+
 
 class createList {
   constructor(obj) {
@@ -15,11 +18,23 @@ class createList {
   }
 }
 
-const myList = new createList(listofcheese);
-const divE = myList.createDivElement();
-console.log(divE);
+// const myList = new createList(listofcheese);
+// const divE = myList.createDivElement();
+// console.log(divE);
 
-document.body.appendChild(divE);
+// document.body.appendChild(divE);
+
+fetchData().then(data => {
+    for (const prop in array) {
+        let che = new List(array[prop]);
+        console.log(che.cheese);
+        const myList = new createList(che.cheese);
+        const divE = myList.createDivElement();
+        document.body.appendChild(divE);
+    };
+})
+
+
 
 
 

@@ -1,6 +1,14 @@
-let array = ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'];
+// let array = ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'];
 
-class List {
+export let array = [
+    ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
+    ['Parma', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
+    ['Camamber', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
+    ['Gryer', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
+    ['Gouda', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
+];
+
+export class List {
     constructor(arr) {
         this.arr = arr;
         this.obj = this.buildCheese();
@@ -17,50 +25,19 @@ class List {
         return obj;
     }
 }
-let che = new List(array);
-export const listofcheese = che.cheese;
+// let che = new List(array);
+// export const listofcheese = che.cheese;
 
 
-// let array = [
-//     ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
-//     ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
-//     ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
-//     ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
-//     ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese']]
-// undefined
-// class List {
-//     constructor(arr) {
-//         this.arr = arr;
-//         this.obj = this.buildCheese();
-//     }
-//     get cheese() {
-//         return this.obj;
-//     }
-//     buildCheese() {
-//         const keys = ['name', 'age', 'milk', 'since', 'type', 'mold', 'taste', 'description'];
-//         const obj = {};
-//         for (const prop in keys) {
-//             obj[keys[prop]] = this.arr[prop];
-//         }
-//         return obj;
-//     }
-// }
-// undefined
-// function fetchData() {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(data);
-//       reject('Ошибка получения данных');
-//     }, 1000);
-//   });
-// }
-// undefined
-// for (const prop in array) {
-//     fetchData().then(data => {
-//         let che = new List(array[prop]);
-//         che.obj;
-//     })
-// }
+
+export function fetchData() {
+  return new Promise((resolve, reject) => {
+    let data = array;
+      resolve(data);
+      reject('Ошибка получения данных');
+  });
+}
+
 
 
 // export const listofcheese = {
