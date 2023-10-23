@@ -1,10 +1,9 @@
 body {
-  background-color: black;
-  color: white;
+  color: black;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   font-family: "Ubuntu Mono", monospace;
 }
