@@ -1,16 +1,28 @@
 body {
-  color: black;
-  margin: 0;
+  background-color: black;
+  color: aliceblue;
+  margin-left: 20%;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: left;
   font-family: "Ubuntu Mono", monospace;
+  font-size: 0.9rem;
+}
+
+main {
+  width: 100%;
+  padding: 1em;
 }
 
 div {
   background-color: rgba(155, 131, 131, 0.089);
-  padding: 1em;
+  padding: 0.2em;
   margin: 1em;
-  border-radius: 5%;
+  width: 30em;
+  border-radius: 2%;
+}
+div p {
+  margin: 0.5rem;
 }
