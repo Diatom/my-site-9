@@ -1,6 +1,6 @@
 // import { listofcheese } from './cheese.js';
-import { List, fetchData, array } from './cheese.js';
-// import array from './data.json';
+import { List } from './cheese.js';
+import { array } from './data.js';
 
 
 class createList {
@@ -23,6 +23,14 @@ class createList {
 // console.log(divE);
 
 // document.body.appendChild(divE);
+
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    let data = array;
+    resolve(data);
+    reject('Ошибка получения данных');
+  });
+}
 
 fetchData().then(data => {
     for (const prop in array) {
