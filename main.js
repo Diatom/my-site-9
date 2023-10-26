@@ -1,6 +1,6 @@
 // import { listofcheese } from './cheese.js';
 import { List } from './cheese.js';
-import { array } from './data.js';
+import { array, tags } from './data.js';
 
 
 class createList {
@@ -43,7 +43,24 @@ fetchData().then(data => {
 })
 
 
+class Nav {
+  constructor(tags) {
+    this.nav = document.createElement('nav');
+    this.tags = tags;
+  }
+  createButton() {
+    for (let key in this.tags) {
+      const button = document.createElement('button');
+      button.innerHTML = `#${tags[key]}`;
+      this.nav.appendChild(button);
+    }
+    return this.nav;
+  }
+}
 
+const myNav = new Nav(tags);
+const button = myNav.createButton();
+document.body.appendChild(button);
 
 
 // for (const property in listofcheese) {

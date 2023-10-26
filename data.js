@@ -5,3 +5,45 @@ export let array = [
   ['Gruyère', '5-12 months', 'Cow', '12th century AD', 'Hard', 'No', 'Savory, slightly sweet', 'Firm and creamy Swiss cheese with a nutty flavor'],
   ['Gouda', '1-6 months', 'Cow', '12th century AD', 'Semi-hard', 'No', 'Buttery, mellow', 'Dutch cheese with a smooth and creamy texture'],
 ];
+
+let dat = [
+  {
+    id: 1,
+    name: `Cheddar`,
+    age: `3-24 months`,
+    milk: `Cow`,
+    since: `12th century AD`,
+    type: `Semi-hard, hard`,
+    mold: `No`,
+    taste: `Round, spicy`,
+    description: `Most popular semi-hard cheese`,
+    image: `./image/cheddar.png`,
+  }
+]
+
+export const tags = [
+  `young`,
+  `mature`,
+  `cow`,
+  `sheep`,
+  `goat`,
+  `fresh`,
+  `soft`,
+  `semihard`,
+  `hard`,
+  `round`,
+  `spicy`,
+  `nutty`,
+  `mellow`,
+  `buttery`,
+  `sweety`,
+  `creamy`,
+  `salty`,
+  `mold`,
+  `blue`,
+  `Swiss`,
+  `England`,
+  `Italy`,
+  `Spain`,
+  `France`, 
+]

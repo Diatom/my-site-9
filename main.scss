@@ -25,3 +25,12 @@ div {
     margin: 0.5rem;
   }
 }
+nav {
+  flex-wrap: wrap;
+  display: flex;
+  
+  button {
+    display: flex;
+    cursor: pointer;
+  }
+}
