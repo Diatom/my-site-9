@@ -43,7 +43,7 @@ fetchData().then(data => {
 })
 
 
-class Nav {
+class Filter {
   constructor(tags) {
     this.nav = document.createElement('nav');
     this.tags = tags;
@@ -58,8 +58,8 @@ class Nav {
   }
 }
 
-const myNav = new Nav(tags);
-const button = myNav.createButton();
+const myFilter = new Filter(tags);
+const button = myFilter.createButton();
 document.body.appendChild(button);
 
 
