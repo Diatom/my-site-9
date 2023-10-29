@@ -59,8 +59,13 @@ class Filter {
 }
 
 const myFilter = new Filter(tags);
-const button = myFilter.createButton();
-document.body.appendChild(button);
+const buttons = myFilter.createButton();
+document.body.appendChild(buttons);
+
+
+function onClickFilter() {
+  
+}
 
 
 // for (const property in listofcheese) {
