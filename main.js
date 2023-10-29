@@ -72,6 +72,49 @@ function onClickFilter() {
 }
 
 
+class Filter {
+  constructor(tags) {
+    this.nav = document.createElement('nav');
+    this.tags = tags;
+  }
+  createButton() {
+    for (let key in this.tags) {
+      const button = document.createElement('button');
+      button.innerHTML = #${this.tags[key]};
+      button.addEventListener('click', this.onClickFilter.bind(this)); // Добавляем обработчик события по клику
+      this.nav.appendChild(button);
+    }
+    return this.nav;
+  }
+
+  // Обновленный метод onClickFilter
+  onClickFilter(event) {
+    const buttons = document.querySelectorAll('button');
+    const clickedButton = event.target;
+    const value = clickedButton.textContent.slice(1); // Удаляем символ # из текста кнопки
+    const filteredArray = array.filter(item => item.includes(value));
+    
+    if (filteredArray.length > 0) {
+      buttons.forEach(button => {
+        const buttonValue = button.textContent.slice(1);
+        if (filteredArray.some(item => item.includes(buttonValue))) {
+          button.style.display = 'flex'; // Отображаем кнопку, если соответствующий текст присутствует в отфильтрованном массиве
+        } else {
+          button.style.display = 'none'; // Скрываем кнопку, если соответствующий текст не присутствует в отфильтрованном массиве
+        }
+      });
+    } else {
+      buttons.forEach(button => button.style.display = 'flex'); // Показываем все кнопки, если отфильтрованный массив пустой
+    }
+  }
+}
+
+const myFilter = new Filter(tags);
+const buttons = myFilter.createButton();
+document.body.appendChild(buttons);
+
+
+
 // for (const property in listofcheese) {
 //   if (listofcheese.hasOwnProperty(property)) {
 //     const obj = document.createElement(`div`);
