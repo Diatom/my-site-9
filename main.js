@@ -64,7 +64,11 @@ document.body.appendChild(buttons);
 
 
 function onClickFilter() {
-  
+  const button = document.querySelector('button');
+  let value = this.button.textContent;
+  button.addEventListener('click', (event) => {
+    if (Object.values().includes(value))
+  }
 }
 
 
