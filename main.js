@@ -65,12 +65,16 @@ document.body.appendChild(buttons);
 
 function onClickFilter() {
   const button = document.querySelector('button');
-  let value = this.button.textContent;
+  let value = button.textContent;
   button.addEventListener('click', (event) => {
-    if (Object.values().includes(value))
-  }
+    if (Object.values().includes(value)) {
+      document.getElementsByTagName('button').style.display = "flex";
+    } else {
+      document.getElementsByTagName('button').style.display = "none";
+    }
+  })
 }
-
+onClickFilter();
 
 class Filter {
   constructor(tags) {
