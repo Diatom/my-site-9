@@ -46,7 +46,7 @@ class Filter {
   createButton() {
     for (let key in this.tags) {
       const button = document.createElement('button');
-      button.innerHTML = `#${this.tags[key]}`;
+      button.innerHTML = `${this.tags[key]}`;
       button.setAttribute(`id`, [key])
       button.addEventListener('click', this.onClickFilter.bind(this));
       this.nav.appendChild(button);
@@ -57,19 +57,14 @@ class Filter {
   onClickFilter(event) {
     const divs = document.querySelectorAll('div');
     const clickedButton = event.target;
-  
-    divs.forEach(div => {
-      if (div.textContent.includes(clickedButton.textContent)) {
-        div.style.visibility = 'visible';
-      } else {
-        let divId = div.getAttribute('id');
-        if (divId !== clickedButton.textContent.toLowerCase()) {
-          div.style.visibility = 'hidden';
-        }
+    for (let but in divs) {
+      if (tags.find((element) => element === clickedButton.textContent)) {
+        divs.style.visibility = `hidden`;
+        divs[but].style.visibility = `visible`;
       }
-    });
+    }
   }
-  }
+}
 
 const myFilter = new Filter(tags);
 const buttons = myFilter.createButton();
