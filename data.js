@@ -24,9 +24,9 @@ let dat = [
 export const tags = [
   `young`,
   `mature`,
-  `cow`,
-  `sheep`,
-  `goat`,
+  `Cow`,
+  `Sheep`,
+  `Goat`,
   `fresh`,
   `soft`,
   `semihard`,

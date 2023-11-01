@@ -1,7 +1,7 @@
 body {
   background-color: rgb(10, 11, 20);
   color: aliceblue;
-  margin-left: 20%;
+  margin-left: 20em;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +15,7 @@ body {
 main {
   width: 100%;
 }
-div {
+.cheese {
   background-color: rgba(155, 131, 131, 0.089);
   padding: 0.2em;
   margin: 1em 0 0 0;
@@ -31,13 +31,20 @@ nav {
   width: 30em;
   margin: 1em 0 1em 0;
    
-  button {
+  .button-filter {
     cursor: pointer;
     border-radius: 0;
-    border: none;
+    border: rgb(27, 21, 21) 0.2px solid;
     margin: 0.2em 0.2em 0 0;
     background-color: rgb(27, 21, 21);
     color: rgb(218, 218, 123);
+  }
+  .button-filter:hover {
+    background-color: rgb(49, 38, 38);
+  }
+  .button-filter:focus {
+    background-color: rgb(131, 28, 28);
+    border: rgb(195, 197, 212) 0.2px solid;
   }
 }
 /* width */

@@ -32,11 +32,10 @@ fetchData().then(data => {
         console.log(che.cheese);
         const myList = new createList(che.cheese);
         const divE = myList.createDivElement();
-        divE.setAttribute(`id`, [prop])
+        divE.setAttribute(`class`, `cheese`)
         document.body.appendChild(divE);
     };
 })
-
 
 class Filter {
   constructor(tags) {
@@ -47,7 +46,7 @@ class Filter {
     for (let key in this.tags) {
       const button = document.createElement('button');
       button.innerHTML = `${this.tags[key]}`;
-      button.setAttribute(`id`, [key])
+      button.setAttribute(`class`, `button-filter`);
       button.addEventListener('click', this.onClickFilter.bind(this));
       this.nav.appendChild(button);
     }
@@ -55,12 +54,15 @@ class Filter {
   }
 
   onClickFilter(event) {
-    const divs = document.querySelectorAll('div');
+    const divs = document.getElementsByClassName(`cheese`);
     const clickedButton = event.target;
-    for (let but in divs) {
-      if (tags.find((element) => element === clickedButton.textContent)) {
-        divs.style.visibility = `hidden`;
-        divs[but].style.visibility = `visible`;
+    console.log(clickedButton.textContent);
+    for (let i in divs) {
+      let result = divs[i].textContent.includes(clickedButton.textContent);
+      if (result) {
+        divs[i].style.display = 'block';
+        } else {
+        divs[i].style.display = 'none';
       }
     }
   }
