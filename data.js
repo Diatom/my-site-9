@@ -19,7 +19,7 @@ let dat = [
     description: `Most popular semi-hard cheese`,
     image: `./image/cheddar.png`,
   }
-]
+];
 
 export const tags = [
   `young`,
@@ -46,4 +46,4 @@ export const tags = [
   `Italy`,
   `Spain`,
   `France`, 
-]
+];

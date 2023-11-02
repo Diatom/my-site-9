@@ -1,42 +1,6 @@
 import { List } from './cheese.js';
 import { array, tags } from './data.js';
 
-
-class createList {
-  constructor(obj) {
-    this.divE = document.createElement('div');
-    this.obj = obj;
-  }
-  createDivElement() {
-    for (let key in this.obj) {
-      const pE = document.createElement('p');
-      pE.innerText = `${key}: ${this.obj[key]}`;
-      this.divE.appendChild(pE);
-    }
-    return this.divE;
-  }
-}
-
-
-function fetchData() {
-  return new Promise((resolve, reject) => {
-    let data = array;
-    resolve(data);
-    reject('Ошибка получения данных');
-  });
-}
-
-fetchData().then(data => {
-    for (const prop in array) {
-        let che = new List(array[prop]);
-        console.log(che.cheese);
-        const myList = new createList(che.cheese);
-        const divE = myList.createDivElement();
-        divE.setAttribute(`class`, `cheese`)
-        document.body.appendChild(divE);
-    };
-})
-
 class Filter {
   constructor(tags) {
     this.nav = document.createElement('nav');
@@ -71,3 +35,40 @@ class Filter {
 const myFilter = new Filter(tags);
 const buttons = myFilter.createButton();
 document.body.appendChild(buttons);
+
+class createList {
+  constructor(obj) {
+    this.divE = document.createElement('div');
+    this.obj = obj;
+  }
+  createDivElement() {
+    for (let key in this.obj) {
+      const pE = document.createElement('p');
+      pE.innerText = `${key}: ${this.obj[key]}`;
+      this.divE.appendChild(pE);
+    }
+    return this.divE;
+  }
+}
+
+
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    let data = array;
+    resolve(data);
+    reject('Ошибка получения данных');
+  });
+}
+
+const main = document.body.appendChild(document.createElement('main'));
+
+fetchData().then(data => {
+    for (const prop in array) {
+        let che = new List(array[prop]);
+        console.log(che.cheese);
+        const myList = new createList(che.cheese);
+        const divE = myList.createDivElement();
+        divE.setAttribute(`class`, `cheese`);
+        main.appendChild(divE);
+    };
+});
