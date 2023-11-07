@@ -1,12 +1,12 @@
-export let array = [
-  ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
-  ['Parmesan', '12-36 months', 'Cow', '13th century AD', 'Hard', 'No', 'Rich, nutty', 'Firm and granular cheese with a strong flavor'],
-  ['Camembert', '3-8 weeks', 'Cow', 'Late 18th century', 'Soft', 'Yes', 'Creamy, earthy', 'Soft, creamy cheese with a bloomy rind'],
-  ['Gruyère', '5-12 months', 'Cow', '12th century AD', 'Hard', 'No', 'Savory, slightly sweet', 'Firm and creamy Swiss cheese with a nutty flavor'],
-  ['Gouda', '1-6 months', 'Cow', '12th century AD', 'Semi-hard', 'No', 'Buttery, mellow', 'Dutch cheese with a smooth and creamy texture'],
-];
+// export let array = [
+//   ['Cheddar', '3-24 months', 'Cow', '12th century AD', 'Semi-hard, hard', 'No', 'Round, spicy', 'Most popular semi-hard cheese'],
+//   ['Parmesan', '12-36 months', 'Cow', '13th century AD', 'Hard', 'No', 'Rich, nutty', 'Firm and granular cheese with a strong flavor'],
+//   ['Camembert', '3-8 weeks', 'Cow', 'Late 18th century', 'Soft', 'Yes', 'Creamy, earthy', 'Soft, creamy cheese with a bloomy rind'],
+//   ['Gruyère', '5-12 months', 'Cow', '12th century AD', 'Hard', 'No', 'Savory, slightly sweet', 'Firm and creamy Swiss cheese with a nutty flavor'],
+//   ['Gouda', '1-6 months', 'Cow', '12th century AD', 'Semi-hard', 'No', 'Buttery, mellow', 'Dutch cheese with a smooth and creamy texture'],
+// ];
 
-let dat = [
+export let dat = [
   {
     id: 1,
     name: `Cheddar`,
@@ -17,9 +17,52 @@ let dat = [
     mold: `No`,
     taste: `Round, spicy`,
     description: `Most popular semi-hard cheese`,
-    image: `./image/cheddar.png`,
-  }
-];
+  },
+  {
+    id: 2,
+    name: `Parmesan`,
+    age: `12-36 months`,
+    milk: `Cow`,
+    since: `13th century AD`,
+    type: `Hard`,
+    mold: `No`,
+    taste: `Rich, nutty`,
+    description: `Firm and granular cheese with a strong flavor`,
+  },
+  {
+    id: 3,
+    name: `Camembert`,
+    age: `3-8 weeks`,
+    milk: `Cow`,
+    since: `Late 18th century`,
+    type: `Soft`,
+    mold: `Yes`,
+    taste: `Creamy, earthy`,
+    description: `Soft, creamy cheese with a bloomy rind`,
+  },
+  {
+    id: 4,
+    name: `Gruyère`,
+    age: `5-12 months`,
+    milk: `Cow`,
+    since: `12th century AD`,
+    type: `Hard`,
+    mold: `No`,
+    taste: `Savory, slightly sweet`,
+    description: `Firm and creamy Swiss cheese with a nutty flavor`,
+  },
+  {
+    id: 5,
+    name: `Gouda`,
+    age: `1-24 months`,
+    milk: `Cow`,
+    since: `12th century AD`,
+    type: `Semi-hard, hard`,
+    mold: `No`,
+    taste: `Buttery, mellow`,
+    description: `Dutch cheese with a smooth and creamy texture`,
+  },
+]
 
 export const tags = [
   `young`,

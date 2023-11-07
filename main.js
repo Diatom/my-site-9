@@ -1,5 +1,5 @@
-import { List } from './cheese.js';
-import { array, tags } from './data.js';
+// import { List } from './cheese.js';
+import { tags, dat } from './data.js';
 
 class Filter {
   constructor(tags) {
@@ -42,9 +42,9 @@ class createList {
     this.obj = obj;
   }
   createDivElement() {
-    for (let key in this.obj) {
+    for (let [key, value] of Object.entries(this.obj)) {
       const pE = document.createElement('p');
-      pE.innerText = `${key}: ${this.obj[key]}`;
+      pE.innerText = `${key}: ${value}`;
       this.divE.appendChild(pE);
     }
     return this.divE;
@@ -54,7 +54,7 @@ class createList {
 
 function fetchData() {
   return new Promise((resolve, reject) => {
-    let data = array;
+    let data = dat;
     resolve(data);
     reject('Ошибка получения данных');
   });
@@ -63,12 +63,21 @@ function fetchData() {
 const main = document.body.appendChild(document.createElement('main'));
 
 fetchData().then(data => {
-    for (const prop in array) {
-        let che = new List(array[prop]);
-        console.log(che.cheese);
-        const myList = new createList(che.cheese);
+    for (const prop in data) {
+        // let che = new List(array[prop]);
+        console.log(data[prop]);
+        const myList = new createList(data[prop]);
         const divE = myList.createDivElement();
         divE.setAttribute(`class`, `cheese`);
         main.appendChild(divE);
     };
 });
+
+// createDivElement() {
+//   for (let key in this.obj) {
+//     const pE = document.createElement('p');
+//     pE.innerText = `${key}: ${this.obj[key]}`;
+//     this.divE.appendChild(pE);
+//   }
+//   return this.divE;
+// }
