@@ -30,43 +30,39 @@ main {
     margin: 0.5rem;
   }
 }
-nav {
+nav, my-tags {
   flex-wrap: wrap;
   display: flex;
   width: 30em;
   margin: 1em 0 1em 0;
-   
-  .button-filter {
-    cursor: pointer;
-    border-radius: 0;
-    border: rgb(27, 21, 21) 0.2px solid;
-    margin: 0.2em 0.2em 0 0;
-    background-color: rgb(27, 21, 21);
-    color: rgb(218, 218, 123);
-  }
-  .button-filter:hover {
-    background-color: rgb(49, 38, 38);
-  }
-  .button-filter:focus {
-    background-color: rgb(131, 28, 28);
-    border: rgb(195, 197, 212) 0.2px solid;
-  }
+}
+.button-filter {
+  cursor: pointer;
+  border-radius: 0;
+  border: rgb(27, 21, 21) 0.2px solid;
+  margin: 0.2em 0.2em 0 0;
+  background-color: rgb(27, 21, 21);
+  color: rgb(218, 218, 123);
+}
+.button-filter:hover {
+  background-color: rgb(49, 38, 38);
+}
+.button-filter:focus {
+  background-color: rgb(131, 28, 28);
+  border: rgb(195, 197, 212) 0.2px solid;
 }
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
   background: black; 
 }
- 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #444; 
 }
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 

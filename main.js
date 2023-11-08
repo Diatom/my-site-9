@@ -73,44 +73,38 @@ fetchData().then(data => {
     };
 });
 
-// createDivElement() {
-//   for (let key in this.obj) {
-//     const pE = document.createElement('p');
-//     pE.innerText = `${key}: ${this.obj[key]}`;
-//     this.divE.appendChild(pE);
-//   }
-//   return this.divE;
-// }
 
 class MyTags extends HTMLElement {
-  constructor(tags) {
+  constructor() {
     super();
-    this.tags = tags;
     this.addEventListener('click', () => {
       this.handleClick();
     });
   }
-
   handleClick() {
-    alert('Button clicked!');
+    // alert('Button clicked!');
+    const divs = document.getElementsByClassName(`cheese`);
+    const clickedButton = event.target;
+    console.log(clickedButton.textContent);
+    for (let i in divs) {
+      let result = divs[i].textContent.includes(clickedButton.textContent);
+      if (result) {
+        divs[i].style.display = 'block';
+        } else {
+        divs[i].style.display = 'none';
+      }
+    }
   }
-
-  // get text() {
-  //   return this.getAttribute('text');
-  // }
-
-  // set text(value) {
-  //   this.setAttribute('text', value);
-  //   this.render();
-  // }
-
   render() {
-      this.innerHTML = `<button class='button-filter'>${this.tags}</button>`;
+    tags.forEach((name) => {
+      const button = document.createElement('button');
+      button.setAttribute(`class`, `button-filter`);
+      button.textContent = name.trim();
+      this.appendChild(button);
+    })
   }
-
   connectedCallback() {
     this.render();
   }
 }
-
 customElements.define('my-tags', MyTags);
