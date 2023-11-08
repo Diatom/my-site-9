@@ -17,6 +17,7 @@ export let dat = [
     mold: `No`,
     taste: `Round, spicy`,
     description: `Most popular semi-hard cheese`,
+    tags: `semihard, hard, spicy, cow, mature, England`,
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ export let dat = [
     mold: `No`,
     taste: `Rich, nutty`,
     description: `Firm and granular cheese with a strong flavor`,
+    tags: `hard, spicy, nutty, cow, mature, Italy`,
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export let dat = [
     mold: `Yes`,
     taste: `Creamy, earthy`,
     description: `Soft, creamy cheese with a bloomy rind`,
+    tags: `soft, creamy, cow, young, France`,
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ export let dat = [
     mold: `No`,
     taste: `Savory, slightly sweet`,
     description: `Firm and creamy Swiss cheese with a nutty flavor`,
+    tags: `semihard, hard, savory, sweet, cow, mature, Swiss`,
   },
   {
     id: 5,
@@ -61,15 +65,16 @@ export let dat = [
     mold: `No`,
     taste: `Buttery, mellow`,
     description: `Dutch cheese with a smooth and creamy texture`,
+    tags: `semihard, hard, buttery, cow, Dutch`,
   },
 ]
 
 export const tags = [
   `young`,
   `mature`,
-  `Cow`,
-  `Sheep`,
-  `Goat`,
+  `cow`,
+  `sheep`,
+  `goat`,
   `fresh`,
   `soft`,
   `semihard`,

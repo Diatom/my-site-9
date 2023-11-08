@@ -11,7 +11,7 @@ class Filter {
       const button = document.createElement('button');
       button.innerHTML = `${this.tags[key]}`;
       button.setAttribute(`class`, `button-filter`);
-      button.addEventListener('click', this.onClickFilter.bind(this));
+      button.addEventListener('click', this.onClickFilter);
       this.nav.appendChild(button);
     }
     return this.nav;
@@ -81,3 +81,36 @@ fetchData().then(data => {
 //   }
 //   return this.divE;
 // }
+
+class MyTags extends HTMLElement {
+  constructor(tags) {
+    super();
+    this.tags = tags;
+    this.addEventListener('click', () => {
+      this.handleClick();
+    });
+  }
+
+  handleClick() {
+    alert('Button clicked!');
+  }
+
+  // get text() {
+  //   return this.getAttribute('text');
+  // }
+
+  // set text(value) {
+  //   this.setAttribute('text', value);
+  //   this.render();
+  // }
+
+  render() {
+      this.innerHTML = `<button class='button-filter'>${this.tags}</button>`;
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+}
+
+customElements.define('my-tags', MyTags);
