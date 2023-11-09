@@ -1,40 +1,85 @@
 // import { List } from './cheese.js';
 import { tags, dat } from './data.js';
 
-class Filter {
-  constructor(tags) {
-    this.nav = document.createElement('nav');
-    this.tags = tags;
+class MyTags extends HTMLElement {
+  constructor() {
+    super();
+    this.addEventListener('click', () => {
+      this.handleClick();
+    });
   }
-  createButton() {
-    for (let key in this.tags) {
-      const button = document.createElement('button');
-      button.innerHTML = `${this.tags[key]}`;
-      button.setAttribute(`class`, `button-filter`);
-      button.addEventListener('click', this.onClickFilter);
-      this.nav.appendChild(button);
-    }
-    return this.nav;
-  }
-
-  onClickFilter(event) {
+  handleClick() {
     const divs = document.getElementsByClassName(`cheese`);
     const clickedButton = event.target;
     console.log(clickedButton.textContent);
-    for (let i in divs) {
-      let result = divs[i].textContent.includes(clickedButton.textContent);
-      if (result) {
-        divs[i].style.display = 'block';
+    
+    Array.from(divs).forEach(elem => {
+      const data =  elem.getAttribute(`data-index`);
+
+      if (data.includes(clickedButton.textContent)) {
+        elem.style.display = 'block';
         } else {
-        divs[i].style.display = 'none';
+        elem.style.display = 'none';
       }
-    }
+    })
+    
+    // for (let i in divs) {
+    //   let result = divs[i].textContent.includes(clickedButton.textContent);
+    //   if (result) {
+    //     divs[i].style.visibility = 'visible';
+    //     } else {
+    //     divs[i].style.visibility = 'hidden';
+    //   }
+    // }
+  }
+  render() {
+    tags.forEach((name) => {
+      const button = document.createElement('button');
+      button.setAttribute(`class`, `button-filter`);
+      button.textContent = name.trim();
+      this.appendChild(button);
+    })
+  }
+  connectedCallback() {
+    this.render();
   }
 }
+customElements.define('my-tags', MyTags);
 
-const myFilter = new Filter(tags);
-const buttons = myFilter.createButton();
-document.body.appendChild(buttons);
+// class Filter {
+//   constructor(tags) {
+//     this.nav = document.createElement('nav');
+//     this.tags = tags;
+//   }
+//   createButton() {
+//     for (let key in this.tags) {
+//       const button = document.createElement('button');
+//       button.innerHTML = `${this.tags[key]}`;
+//       button.setAttribute(`class`, `button-filter`);
+//       button.addEventListener('click', this.onClickFilter);
+//       this.nav.appendChild(button);
+//     }
+//     return this.nav;
+//   }
+
+//   onClickFilter(event) {
+//     const divs = document.getElementsByClassName(`cheese`);
+//     const clickedButton = event.target;
+//     console.log(clickedButton.textContent);
+//     for (let i in divs) {
+//       let result = divs[i].textContent.includes(clickedButton.textContent);
+//       if (result) {
+//         divs[i].style.display = 'block';
+//         } else {
+//         divs[i].style.display = 'none';
+//       }
+//     }
+//   }
+// }
+
+// const myFilter = new Filter(tags);
+// const buttons = myFilter.createButton();
+// document.body.appendChild(buttons);
 
 class createList {
   constructor(obj) {
@@ -64,47 +109,13 @@ const main = document.body.appendChild(document.createElement('main'));
 
 fetchData().then(data => {
     for (const prop in data) {
-        // let che = new List(array[prop]);
         console.log(data[prop]);
         const myList = new createList(data[prop]);
         const divE = myList.createDivElement();
         divE.setAttribute(`class`, `cheese`);
+        divE.setAttribute(`data-index`, `${data[prop].tags}`)
         main.appendChild(divE);
     };
 });
 
 
-class MyTags extends HTMLElement {
-  constructor() {
-    super();
-    this.addEventListener('click', () => {
-      this.handleClick();
-    });
-  }
-  handleClick() {
-    // alert('Button clicked!');
-    const divs = document.getElementsByClassName(`cheese`);
-    const clickedButton = event.target;
-    console.log(clickedButton.textContent);
-    for (let i in divs) {
-      let result = divs[i].textContent.includes(clickedButton.textContent);
-      if (result) {
-        divs[i].style.display = 'block';
-        } else {
-        divs[i].style.display = 'none';
-      }
-    }
-  }
-  render() {
-    tags.forEach((name) => {
-      const button = document.createElement('button');
-      button.setAttribute(`class`, `button-filter`);
-      button.textContent = name.trim();
-      this.appendChild(button);
-    })
-  }
-  connectedCallback() {
-    this.render();
-  }
-}
-customElements.define('my-tags', MyTags);
