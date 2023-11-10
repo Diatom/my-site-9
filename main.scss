@@ -17,6 +17,30 @@ main {
   flex-wrap: wrap;
   width: 80%;
 }
+#searchInput {
+  width: 20em;
+  height: 2em;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+  background-color: #555;
+  border: rgb(27, 21, 21) 0.2px solid;
+  color: aliceblue;
+  display: inline-block;
+}
+#searchInput:focus {
+  outline: none;
+}
+#searchButton {
+  cursor: pointer;
+  width: 6em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  background-color: #555;
+  border: rgb(27, 21, 21) 0.2px solid; 
+  color: aliceblue;
+  display: inline-block;
+}
 .cheese {
   background-color: rgba(155, 131, 131, 0.089);
   // background-image: url('../image/cheese.svg');

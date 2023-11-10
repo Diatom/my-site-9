@@ -3,15 +3,12 @@ import { tags, dat } from './data.js';
 class MyTags extends HTMLElement {
   constructor() {
     super();
-    this.addEventListener('click', (event) => {
-      this.handleClick(event);
-    });
   }
   handleClick(event) {
     const divs = document.getElementsByClassName('cheese');
     const clickedButton = event.target;
     console.log(clickedButton.textContent);
-    
+
     Array.from(divs).forEach(elem => {
       const data = elem.getAttribute('data-index');
       if (data.includes(clickedButton.textContent)) {
@@ -19,20 +16,25 @@ class MyTags extends HTMLElement {
       } else {
         elem.style.display = 'none';
       }
-    })
+    });
   }
   render() {
     tags.forEach((name) => {
       const button = document.createElement('button');
       button.setAttribute('class', 'button-filter');
       button.textContent = name.trim();
+      button.addEventListener('click', (event) => {
+        this.handleClick(event);
+      });
       this.appendChild(button);
-    })
+    });
   }
+
   connectedCallback() {
     this.render();
   }
 }
+
 customElements.define('my-tags', MyTags);
 
 
@@ -74,3 +76,28 @@ fetchData().then(data => {
 });
 
 
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+
+function searchData(input) {
+  const divs = document.getElementsByClassName('cheese');
+  Array.from(divs).forEach(elem => {
+    let result = elem.innerHTML.toLowerCase().includes(input);
+    if (result) {
+      elem.style.display = 'block';
+    } else {
+      elem.style.display = 'none';
+    }
+  });
+}
+searchButton.addEventListener('click', () => {
+  const userInput = searchInput.value.toLowerCase();
+  searchData(userInput);
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+      document.getElementById('searchButton').click();
+      event.preventDefault();
+  }
+});
