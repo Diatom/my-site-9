@@ -1,40 +1,75 @@
 import { tags, dat } from './data.js'
 
 
-export class MyButton extends HTMLButtonElement {
+export class MyCheck extends HTMLInputElement {
   render(name) {
-    this.setAttribute('class', 'button-filter')
-    this.textContent = name.trim()
-    this.onclick = this.handleClick
-    return this
+    this.name = 'tags'
+    const label = document.createElement('label')
+    this.type = 'checkbox'
+    // label.appendChild(this)
+    label.setAttribute('class', 'button-filter')
+    this.value = name.trim()
+    label.append(this, this.value)
+    // label.textContent = this.value
+    this.onchange = this.onChange
+    return label
   }
-  handleClick(event) {
+  onChange(event) {
     const divs = document.getElementsByClassName('cheese')
-    console.log(this.textContent)
+    console.log(this.value)
 
     for (const elem of divs) {
       const data = elem.getAttribute('data-index')
-      if (data.includes(this.textContent)) {
-        elem.hidden = true
-      } else {
+      if (data.includes(this.value)) {
         elem.hidden = false
+      } else {
+        elem.hidden = true
       }
     }
   }
 }
-customElements.define('my-button', MyButton, {extends: 'button'})
+customElements.define('my-check', MyCheck, {extends: 'input'})
 
-export class MyTags extends HTMLElement {
+
+// export class MyButton extends HTMLButtonElement {
+//   render(name) {
+//     this.setAttribute('class', 'button-filter')
+//     this.textContent = name.trim()
+//     this.onclick = this.handleClick
+//     return this
+//   }
+//   handleClick(event) {
+//     const divs = document.getElementsByClassName('cheese')
+//     console.log(this.textContent)
+
+//     for (const elem of divs) {
+//       const data = elem.getAttribute('data-index')
+//       if (data.includes(this.textContent)) {
+//         elem.hidden = true
+//       } else {
+//         elem.hidden = false
+//       }
+//     }
+//   }
+// }
+// customElements.define('my-button', MyButton, {extends: 'button'})
+
+export class MyTags extends HTMLFormElement {
   render() {
     for (const name of tags) {
-      this.appendChild(new MyButton().render(name))
+      this.appendChild(new MyCheck().render(name))
     }
   }
+  onChange() {
+    const data = new FormData(this) 
+    console.log(data.getAll('tags'))
+  }
   connectedCallback() {
+    this.onchange = this.onChange
     this.render()
   }
 }
-customElements.define('my-tags', MyTags)
+customElements.define('my-tags', MyTags, {extends: 'form'})
 
 
 class createList {
@@ -63,12 +98,12 @@ function fetchData() {
 const main = document.body.appendChild(document.createElement('main'))
 
 fetchData().then(data => {
-    for (const prop in data) {
-        console.log(data[prop])
-        const myList = new createList(data[prop])
+    for (const value of data) {
+        console.log(value)
+        const myList = new createList(value)
         const divE = myList.createDivElement()
         divE.setAttribute(`class`, `cheese`)
-        divE.setAttribute(`data-index`, `${data[prop].tags}`)
+        divE.setAttribute(`data-index`, `${value.tags}`)
         main.appendChild(divE)
     }
 })
