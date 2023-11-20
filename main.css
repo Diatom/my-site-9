@@ -55,7 +55,7 @@ main {
   margin: 0.5rem;
 }
 
-nav, my-tags {
+.my-tags {
   flex-wrap: wrap;
   display: flex;
   width: 30em;
@@ -64,18 +64,28 @@ nav, my-tags {
 
 .button-filter {
   cursor: pointer;
-  border-radius: 0;
+  padding: 0.2em 0.8em 0.2em 0.8em;
   border: rgb(27, 21, 21) 0.2px solid;
   margin: 0.2em 0.2em 0 0;
   background-color: rgb(27, 21, 21);
   color: rgb(218, 218, 123);
 }
 
+input {
+  display: none;
+  margin: 0;
+}
+
 .button-filter:hover {
   background-color: rgb(49, 38, 38);
 }
 
-.button-filter:focus {
+.button-filter:active {
+  background-color: rgb(131, 28, 28);
+  border: rgb(195, 197, 212) 0.2px solid;
+}
+
+.lol:checked + label {
   background-color: rgb(131, 28, 28);
   border: rgb(195, 197, 212) 0.2px solid;
 }

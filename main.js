@@ -6,11 +6,9 @@ export class MyCheck extends HTMLInputElement {
     this.name = 'tags'
     const label = document.createElement('label')
     this.type = 'checkbox'
-    // label.appendChild(this)
     label.setAttribute('class', 'button-filter')
     this.value = name.trim()
     label.append(this, this.value)
-    // label.textContent = this.value
     this.onchange = this.onChange
     return label
   }
@@ -66,6 +64,7 @@ export class MyTags extends HTMLFormElement {
   }
   connectedCallback() {
     this.onchange = this.onChange
+    this.setAttribute('class', 'my-tags')
     this.render()
   }
 }
