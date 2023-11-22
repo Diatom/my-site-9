@@ -61,17 +61,14 @@ export class MyTags extends HTMLFormElement {
   }
   onChange() {
     const data = new FormData(this) 
-    // const data0 = new FormData()
     for (const elem of divs) {
-    
-    if (data.getAll('tags').length < 1) {
-      elem.hidden = false
-      // console.log("FormData is empty")
-    } else {
-      console.log("FormData contains data")
+      if (data.getAll('tags').length < 1) {
+        elem.hidden = false
+        console.log("FormData is empty")
+      } else {
+        console.log("FormData contains data")
+      }
     }
-  }
-
     console.log(data.getAll('tags'))
   }
   connectedCallback() {
