@@ -1,5 +1,6 @@
 import { tags, dat } from './data.js'
 
+const divs = document.getElementsByClassName('cheese')
 
 export class MyCheck extends HTMLInputElement {
   render(name) {
@@ -13,7 +14,7 @@ export class MyCheck extends HTMLInputElement {
     return label
   }
   onChange(event) {
-    const divs = document.getElementsByClassName('cheese')
+    // const divs = document.getElementsByClassName('cheese')
     console.log(this.value)
 
     for (const elem of divs) {
@@ -60,6 +61,17 @@ export class MyTags extends HTMLFormElement {
   }
   onChange() {
     const data = new FormData(this) 
+    // const data0 = new FormData()
+    for (const elem of divs) {
+    
+    if (data.getAll('tags').length < 1) {
+      elem.hidden = false
+      // console.log("FormData is empty")
+    } else {
+      console.log("FormData contains data")
+    }
+  }
+
     console.log(data.getAll('tags'))
   }
   connectedCallback() {
