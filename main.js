@@ -1,5 +1,9 @@
 import { tags, dat } from './data.js'
+const hello = `(= Oh, hello! =)`
+console.log(hello)
 
+
+// Render filters
 const divs = document.getElementsByClassName('cheese')
 
 export class MyCheck extends HTMLInputElement {
@@ -53,6 +57,8 @@ customElements.define('my-check', MyCheck, {extends: 'input'})
 // }
 // customElements.define('my-button', MyButton, {extends: 'button'})
 
+
+// Render form
 export class MyTags extends HTMLFormElement {
   render() {
     for (const name of tags) {
@@ -80,6 +86,23 @@ export class MyTags extends HTMLFormElement {
 customElements.define('my-tags', MyTags, {extends: 'form'})
 
 
+
+class CheeseList extends HTMLElement {
+  constructor(obj) {
+    super()
+    this.divE = document.createElement('div')
+    this.obj = obj
+  }
+  render() {
+
+  }
+  connectedCallback() {
+
+  }
+}
+
+
+// Cheese cards
 class createList {
   constructor(obj) {
     this.divE = document.createElement('div')
@@ -117,6 +140,7 @@ fetchData().then(data => {
 })
 
 
+// Search
 const searchInput = document.getElementById("searchInput")
 const searchButton = document.getElementById("searchButton")
 
