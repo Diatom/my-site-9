@@ -85,7 +85,7 @@ input {
   border: rgb(195, 197, 212) 0.2px solid;
 }
 
-.button-filter:checked {
+.button-filter:checked + label {
   background-color: rgb(241, 241, 241);
   border: rgb(195, 197, 212) 0.2px solid;
   color: red;

@@ -7,16 +7,16 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: left;
-  // align-items: center;
-  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
   font-size: 0.9rem;
 }
+
 main {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
 }
+
 #searchInput {
   width: 20em;
   height: 2em;
@@ -27,9 +27,11 @@ main {
   color: aliceblue;
   display: inline-block;
 }
+
 #searchInput:focus {
   outline: none;
 }
+
 #searchButton {
   cursor: pointer;
   width: 6em;
@@ -37,15 +39,13 @@ main {
   margin: 0;
   padding: 0;
   background-color: #555;
-  border: rgb(27, 21, 21) 0.2px solid; 
+  border: rgb(27, 21, 21) 0.2px solid;
   color: aliceblue;
   display: inline-block;
 }
+
 .cheese {
   background-color: rgba(155, 131, 131, 0.089);
-  // background-image: url('../image/cheese.svg');
-  // background-size: 100px 100px;
-  // background-repeat: repeat;
   padding: 0.2em;
   margin: 0 0.5em 0.5em 0;
   width: 40em;
@@ -54,40 +54,59 @@ main {
     margin: 0.5rem;
   }
 }
-nav, my-tags {
+
+.my-tags {
   flex-wrap: wrap;
   display: flex;
   width: 30em;
   margin: 1em 0 1em 0;
 }
+
 .button-filter {
   cursor: pointer;
-  border-radius: 0;
+  padding: 0.2em 0.8em 0.2em 0.8em;
   border: rgb(27, 21, 21) 0.2px solid;
   margin: 0.2em 0.2em 0 0;
   background-color: rgb(27, 21, 21);
   color: rgb(218, 218, 123);
 }
+
+input {
+  display: none;
+  margin: 0;
+}
+
 .button-filter:hover {
   background-color: rgb(49, 38, 38);
 }
-.button-filter:focus {
+
+.button-filter:active {
   background-color: rgb(131, 28, 28);
   border: rgb(195, 197, 212) 0.2px solid;
 }
+
+.button-filter:checked + label {
+  background-color: rgb(241, 241, 241);
+  border: rgb(195, 197, 212) 0.2px solid;
+  color: red;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 /* Track */
 ::-webkit-scrollbar-track {
-  background: black; 
+  background: black;
 }
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #444; 
+  background: #444;
 }
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
