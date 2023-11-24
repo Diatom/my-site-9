@@ -94,7 +94,12 @@ class CheeseList extends HTMLElement {
     this.obj = obj
   }
   render() {
-
+    for (let [key, value] of Object.entries(this.obj)) {
+      const pE = document.createElement('p')
+      pE.innerText = `${key}: ${value}`
+      this.divE.appendChild(pE)
+    }
+    return this.divE
   }
   connectedCallback() {
 
