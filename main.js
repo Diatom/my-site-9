@@ -102,7 +102,7 @@ class CheeseList extends HTMLElement {
     return this.divE
   }
   connectedCallback() {
-
+    this.render()
   }
 }
 
