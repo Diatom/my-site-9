@@ -3,6 +3,12 @@ const hello = `(= Oh, hello! =)`
 console.log(hello)
 
 
+const notes = document.getElementById('notes')
+const fet = await fetch (`/main.md`)
+const body = await fet.text()
+console.log(body)
+notes.innerText = body
+
 // Render filters
 const divs = document.getElementsByClassName('cheese')
 
@@ -86,28 +92,9 @@ export class MyTags extends HTMLFormElement {
 customElements.define('my-tags', MyTags, {extends: 'form'})
 
 
-
-class CheeseList extends HTMLElement {
-  constructor(obj) {
-    super()
-    this.divE = document.createElement('div')
-    this.obj = obj
-  }
-  render() {
-    for (let [key, value] of Object.entries(this.obj)) {
-      const pE = document.createElement('p')
-      pE.innerText = `${key}: ${value}`
-      this.divE.appendChild(pE)
-    }
-    return this.divE
-  }
-  connectedCallback() {
-    this.render()
-  }
-}
-
-
 // Cheese cards
+const main = document.body.querySelector('main')
+
 class createList {
   constructor(obj) {
     this.divE = document.createElement('div')
@@ -122,27 +109,60 @@ class createList {
     return this.divE
   }
 }
+// const main = document.body.appendChild(document.createElement('main'))
 
-function fetchData() {
-  return new Promise((resolve, reject) => {
-    let data = dat
-    resolve(data)
-    reject('Ошибка получения данных')
-  })
-}
 
-const main = document.body.appendChild(document.createElement('main'))
-
-fetchData().then(data => {
-    for (const value of data) {
-        console.log(value)
-        const myList = new createList(value)
-        const divE = myList.createDivElement()
-        divE.setAttribute(`class`, `cheese`)
-        divE.setAttribute(`data-index`, `${value.tags}`)
-        main.appendChild(divE)
+class CheeseList extends HTMLElement {
+  render() {
+    for (const value of dat) {
+      console.log(value)
+      const myList = new createList(value)
+      const divE = myList.createDivElement()
+      divE.setAttribute(`class`, `cheese`)
+      divE.setAttribute(`data-index`, `${value.tags}`)
+      this.appendChild(divE)
     }
-})
+  }
+  connectedCallback() {
+    this.render()
+  }
+}
+customElements.define('cheese-list', CheeseList)
+const myList = new CheeseList()
+main.appendChild(myList)
+
+
+// function fetchData() {
+//   return new Promise((resolve, reject) => {
+//     let data = dat
+//     resolve(data)
+//     reject('Ошибка получения данных')
+//   })
+// }
+
+
+// fetchData().then(data => {
+//     for (const value of data) {
+//         console.log(value)
+//         const myList = new createList(value)
+//         const divE = myList.createDivElement()
+//         divE.setAttribute(`class`, `cheese`)
+//         divE.setAttribute(`data-index`, `${value.tags}`)
+//         main.appendChild(divE)
+//     }
+// })
+
+
+// fetchData().then(data => {
+//   for (const value of data) {
+//       console.log(value)
+//       const myList = new createList(value)
+//       const divE = myList.createDivElement()
+//       divE.setAttribute(`class`, `cheese`)
+//       divE.setAttribute(`data-index`, `${value.tags}`)
+//       main.appendChild(divE)
+//   }
+// })
 
 
 // Search
@@ -173,35 +193,13 @@ document.addEventListener('keydown', function(event) {
 })
 
 
-// function Test0() {
-//   var bla = 10
-//   console.log(bla)
-//   var bla = 20
-//   {
-//     console.log(bla)
-//   }
-//   console.log(bla)
-// }
-
-// function Test1() {
-//   const bla = 10
-//   console.log(bla)
-//   {
-//     const bla = 20
-//     console.log(bla)
-//   }
-//   console.log(bla)
-// }
-
+//Test
 {
   const bla = `string`
   {
     const bla = `kek`
   }
 }
-
-// Test0()
-// Test1()
 
 export const bla = `string`
 
