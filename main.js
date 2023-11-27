@@ -206,3 +206,6 @@ export const bla = `string`
 import*as self from './main.js'
 globalThis.Main = self
 await import(import.meta.url)
+
+
+
