@@ -2,13 +2,6 @@ import { tags, dat } from './data.js'
 const hello = `(= Oh, hello! =)`
 console.log(hello)
 
-
-const notes = document.getElementById('notes')
-const fet = await fetch (`/main.md`)
-const body = await fet.text()
-console.log(body)
-notes.innerText = body
-
 // Render filters
 const divs = document.getElementsByClassName('cheese')
 
