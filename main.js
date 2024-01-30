@@ -2,7 +2,6 @@ import { tags, dat } from './data.js'
 const hello = `(= Oh, hello! =)`
 console.log(hello)
 
-// Render filters
 const divs = document.getElementsByClassName('cheese')
 
 export class MyCheck extends HTMLInputElement {
